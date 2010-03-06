@@ -117,7 +117,7 @@ sub create_branches {
         # Get the current level's parent branches
         # ( i.e. the previous level's branches )
         my @parent_branches = $self->filter_branches( 
-            sub { $_->level == ( $level - 1 ) } 
+            sub { $_->level = ( $level - 1 ) }
         );
 
         foreach my $parent ( @parent_branches ) {

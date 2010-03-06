@@ -8,5 +8,55 @@ tree-shape, and the difference is that the recursive algorith gives more realist
 algorithm gives more control over the overall size and complexity of the tree shape.
 
 
+Algorithm::Shape::RandomTree::Tree
+==================================
 
+Anatomy of a tree:
+This simplified shape of a tree is a collection of parented branches connected to a stem (the main branch).
+The connection between a parent branch and it's children is created simply by assigning the end-point
+of the parent as the start-point of the children branches.
+The children branches are assigned a level, according to the number of nested parents each has (minus the stem).
+To create a realistic tree-shape, the length and width of the branches decreases with the level.
+
+Attributes
+----------
+Length and width values should be according the units of masurement ib the rendering module. 
+For instance, if rendering the tree with SVG (as recommended and demonstrated), the units
+are pixels.
+
+stem_length: Absolute length of the stem.
+
+tree_width: The width of the stem, which decreases gradually with each level of children branches.
+
+stem_curve: The curvature of the tree's stem.
+
+branch_length: The average length of a non-stem branch (the actual length depends on this value,
+	       the branch_stdev, the level of the branch and random factors).
+
+branch_stdev: the variablity of the branches' lenght, represented by the plus-minus value around
+	      the average length.
+
+branch_curve: The average curvature of non-stem branchces.
+
+complexity: The maximum number of branches sprouting from their parent's end point.
+
+nodulation: The number of levels of sub-branching (i.e. the number of nested parents).
+
+ebbing_factor: The nodulation's falloff along the tree.
+
+creation_algorithm: The algorithm used to calculate the tree's shape.
+		    Could be either "recursive" or "linear". Default is recursive.
+
+dx_range and dy_range: Determins the variability in angle of length between the various branches.
+	  Decreases with level.
+
+verbose: prints out messages describing the tree creation process.
+
+image_width: The size of the image on which the tree will be created. The stem will be positioned
+	     in the exact center of this image.
+
+
+Methods
+-------
+New: Create a new tree object, and assign values to all attributes.
 
