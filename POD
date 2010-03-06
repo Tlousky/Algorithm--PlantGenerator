@@ -1,0 +1,12 @@
+=head1 <i>Algorithm::Shape::RandomTree</i>
+
+This module creates an object which holds the data representing a tree shape, in a like named object.
+This tree object is build of a collection of branches, which in turn are built of pairs of coordinates
+(start and end point for each branch). This module calculates The tree's shape using two possible algorithms,
+one is recursive, and the other linear. Both contain lots of random elements required to create a more realistic
+tree-shape, and the difference is that the recursive algorith gives more realistic results, while the linear
+algorithm gives more control over the overall size and complexity of the tree shape.
+
+
+
+
